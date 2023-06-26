@@ -16,10 +16,10 @@ function App() {
     {
       users.map(function(item){
         return (
-          <div className='component-style'>
+          <div key={item.id} className='component-style'>
       {item.age}-{item.name}
       </div>
-        )
+        );
       })
     }
     {/* <div className='component-style'>
