@@ -12,7 +12,17 @@ function App() {
     ];
  
   return <div className ='app-style'>
-    <div className='component-style'>
+
+    {
+      users.map(function(item){
+        return (
+          <div className='component-style'>
+      {item.age}-{item.name}
+      </div>
+        )
+      })
+    }
+    {/* <div className='component-style'>
       {users[0].age}-{users[0].name}
       </div>
     <div className='component-style'>
@@ -26,7 +36,7 @@ function App() {
     </div>
     <div className='component-style'>
     {users[4].age}-{users[4].name}
-    </div>
+    </div> */}
 
   </div>;
    
