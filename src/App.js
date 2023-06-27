@@ -30,7 +30,9 @@ const nameChangeHandler = (event) =>{
 const ageChangeHandler = (event) => {
   setAge(event.target.value);
 };
-
+ const clickAddButtonHandler = () => {
+alert('hi');
+ };
 
   return (
     <div>
@@ -39,12 +41,14 @@ const ageChangeHandler = (event) => {
         <input 
         value = {name}
         onChange={(event)=>nameChangeHandler(event)}
-        /> <br />
+        /> 
+        <br />
         나이 : &nbsp;
         <input 
         value = {age}
-        onChange={ageChangeHandler} />{age}
-     
+        onChange={ageChangeHandler} />
+        <br />
+        <button onClick={clickAddButtonHandler}>추가</button>
       </div>
   <div className ='app-style'>
     { users.map(function(item){
