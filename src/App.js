@@ -20,17 +20,29 @@ const App = () => {
   const ageChangeHandler = (event) => {
     setAge(event.target.value);
   };
+ // 과제 
+ // 1. 새로운 형태의 이놈을 만든다.! {id:1, age:18, name: "강해린"},
+ // 2. 이 놈을 배열에 넣는다.
 
-  const clickAddButtonHandler = () => {
+ // 불변성을 유지하기 위해서 배열 users를 스프레드 문법으로 풀고, 새로운 배열을 담아서 반환.
+  
+ // 추가 버튼 클릭
+ const clickAddButtonHandler = () => {
     const newUser = {
       id: users.length + 1,
       age: age,
       name: name,
     };
     setUsers([...users, newUser]);
-    setName('');
-    setAge('');
+     setName('');
+     setAge('');
   };
+
+ // 삭제 버튼 클릭(❌)
+ const clickRemoveButtonHandler =()=>{
+  alert ('bye');
+ }
+
 
   return (
     <div>
@@ -54,6 +66,7 @@ const App = () => {
           return (
             <div key={item.id} className='component-style'>
               {item.age}-{item.name}
+              <button onClick={clickRemoveButtonHandler}>❌</button>
             </div>
           );
         })}
@@ -63,3 +76,6 @@ const App = () => {
 };
 
 export default App;
+
+
+
