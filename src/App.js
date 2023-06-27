@@ -72,10 +72,9 @@ const App = () => {
       <div className='app-style'>
         {users.map(function (item) {
           return (
-            <div key={item.id} className='component-style'>
-              {item.age}-{item.name}
-              <button onClick={() =>clickRemoveButtonHandler(item.id)}>❌</button>
-            </div>
+            <User item={item} 
+            removeFunction ={clickRemoveButtonHandler} />
+           //상위 컴포넌트에서 하위 컴포넌트로 상위 컴포넌트가 갖고 있는 item이라는 그 값을 하위 컴포넌트로 props의 형태로 내려줌.  
           );
         })}
       </div>
@@ -83,6 +82,16 @@ const App = () => {
   );
 };
 
+//반복되는 부분을 한아의 컴포넌트로서 관리하면 좋겠다.
+// 하나의 users로 관리! 자식 컴포넌트로 user만들기.
+// 자식 컴포넌트 User
+const User = ({item, removeFunction})=>{
+  return (
+  <div key={item.id} className='component-style'>
+              {item.age}-{item.name}
+              <button onClick={() => removeFunction(item.id)}>❌</button>
+            </div>)
+}
 export default App;
 
 
