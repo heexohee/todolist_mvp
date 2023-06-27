@@ -68,7 +68,7 @@ const App = () => {
         />
         <br />
         {/* 아래 코드를 함수형 컴포넌트 (버튼)로 만들어서 props로 받아옴 */}
-        <Button clickAddButtonHandler={clickAddButtonHandler} />
+        <Button clickAddButtonHandler={clickAddButtonHandler}>추가</Button>
         {/* <button onClick={ clickAddButtonHandler}>추가</button> */}
       </div>
       <div className='app-style'>
@@ -87,8 +87,8 @@ const App = () => {
 };
 
 //함수형 컴포넌트 추가 버튼 만들기
-const Button =({clickAddButtonHandler})=>{ //구조 분해 할당으로 가져옴.(???)
-return  <button onClick={ clickAddButtonHandler}>추가</button>
+const Button =({clickAddButtonHandler, children})=>{ //구조 분해 할당으로 가져옴.(???)
+return  <button onClick={ clickAddButtonHandler}>{children}</button>
 }
 
 //반복되는 부분을 한아의 컴포넌트로서 관리하면 좋겠다.
