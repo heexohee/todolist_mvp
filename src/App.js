@@ -41,9 +41,15 @@ const App = () => {
  // 삭제 버튼 클릭(❌) //엑스 버튼을 누를 때 어떤 값을 넘겨주면 된다.
  const clickRemoveButtonHandler =(id)=>{
   
-  const newUsers = users.filter(users=>users.id !== id)
+  // const newUsers = users.filter(users=>users.id !== id)
+  // setUsers(newUsers);
+
+  const  newUsers = users.filter(function(users) {
+    return users.id !== id;
+  });
   setUsers(newUsers);
- };
+};
+
 
 
   return (
