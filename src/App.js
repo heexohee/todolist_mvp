@@ -38,9 +38,10 @@ const App = () => {
      setAge('');
   };
 
- // 삭제 버튼 클릭(❌)
- const clickRemoveButtonHandler =()=>{
-  alert ('bye');
+ // 삭제 버튼 클릭(❌) //엑스 버튼을 누를 때 어떤 값을 넘겨주면 된다.
+ const clickRemoveButtonHandler =(id)=>{
+  alert(id);
+  //users.filter(users=>users.id !== 어떤 값)
  }
 
 
@@ -59,14 +60,14 @@ const App = () => {
           onChange={ageChangeHandler}
         />
         <br />
-        <button onClick={clickAddButtonHandler}>추가</button>
+        <button onClick={ clickAddButtonHandler}>추가</button>
       </div>
       <div className='app-style'>
         {users.map(function (item) {
           return (
             <div key={item.id} className='component-style'>
               {item.age}-{item.name}
-              <button onClick={clickRemoveButtonHandler}>❌</button>
+              <button onClick={() =>clickRemoveButtonHandler(item.id)}>❌</button>
             </div>
           );
         })}
