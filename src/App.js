@@ -72,7 +72,9 @@ const App = () => {
       <div className='app-style'>
         {users.map(function (item) {
           return (
-            <User item={item} 
+            <User 
+            key = {item.id} //map은 항상 key prop을 가져야 함!
+            item = {item} 
             removeFunction ={clickRemoveButtonHandler} />
            //상위 컴포넌트에서 하위 컴포넌트로 상위 컴포넌트가 갖고 있는 item이라는 그 값을 하위 컴포넌트로 props의 형태로 내려줌.  
           );
