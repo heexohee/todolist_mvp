@@ -67,7 +67,9 @@ const App = () => {
           onChange={ageChangeHandler}
         />
         <br />
-        <button onClick={ clickAddButtonHandler}>추가</button>
+        {/* 아래 코드를 함수형 컴포넌트 (버튼)로 만들어서 props로 받아옴 */}
+        <Button clickAddButtonHandler={clickAddButtonHandler} />
+        {/* <button onClick={ clickAddButtonHandler}>추가</button> */}
       </div>
       <div className='app-style'>
         {users.map(function (item) {
@@ -83,6 +85,11 @@ const App = () => {
     </div>
   );
 };
+
+//함수형 컴포넌트 추가 버튼 만들기
+const Button =({clickAddButtonHandler})=>{ //구조 분해 할당으로 가져옴.(???)
+return  <button onClick={ clickAddButtonHandler}>추가</button>
+}
 
 //반복되는 부분을 한아의 컴포넌트로서 관리하면 좋겠다.
 // 하나의 users로 관리! 자식 컴포넌트로 user만들기.
