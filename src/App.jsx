@@ -52,27 +52,31 @@ const App = () => {
   setUsers(newUsers);
 };
 
-
+const User = ({item, removeFunction})=>{ //구조 분해 할당으로 가져옴.(???)
+  return (
+  <div key={item.id} className='component-style'>
+              {item.name}
+              {/* <button onClick={() => removeFunction(item.id)}>❌</button> */}
+            </div>)
+};
 
   return (
     <div>
-      <div>
-        이름: &nbsp;
+
+      <div className='col'>
+        할일: &nbsp;
         <input
           value={name}
           onChange={nameChangeHandler}
+          placeholder="할일을 입력해 주세요"
         />
-        <br />
-        나이: &nbsp;
-        <input
-          value={age}
-          onChange={ageChangeHandler}
-        />
+        
         <br />
         {/* 아래 코드를 함수형 컴포넌트 (버튼)로 만들어서 props로 받아옴 */}
         <Button clickAddButtonHandler={clickAddButtonHandler}>추가</Button>
         {/* <button onClick={ clickAddButtonHandler}>추가</button> */}
       </div>
+<h1 className='nick'>😘소희의 투두리서터💖</h1>
       <div className='app-style'>
 
         {users.map(function (item) {
