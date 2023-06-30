@@ -51,6 +51,7 @@ const App = () => {
   });
   setUsers(newUsers);
 };
+console.log(users);
 
 const User = ({item, removeFunction})=>{ //구조 분해 할당으로 가져옴.(???)
   return (
